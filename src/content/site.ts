@@ -28,7 +28,7 @@ export const site: SiteContent = {
   positioning:
     "Electrical engineer turned PM. I write the SQL myself, then argue about what it means.",
   status:
-    "NIT Agartala '26, business analytics minor from IIT Mandi. Two PM internships. I build for Indian consumer finance — micro-investing, UPI fraud, and the trust problems underneath both. Open to APM roles in Bengaluru.",
+    "NIT Agartala '26, business analytics minor from IIT Mandi. Two PM internships. Most of what I've built sits in Indian consumer finance — micro-investing, UPI fraud, and the trust problems underneath both. Looking for full-time APM/PM roles.",
   links: [
     {
       label: "12rajchaitanya@gmail.com",
