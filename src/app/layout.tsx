@@ -17,7 +17,7 @@ const description =
   "Product manager. Electrical engineering at NIT Agartala, business analytics at IIT Mandi. Fintech, fraud and financial access in India.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL("https://chaitanya-raj.vercel.app"),
   title: {
     default: "Chaitanya Raj — Product",
     template: "%s — Chaitanya Raj",

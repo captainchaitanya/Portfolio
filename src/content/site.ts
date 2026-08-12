@@ -55,7 +55,7 @@ export const site: SiteContent = {
       "I studied electrical engineering at NIT Agartala and picked up a business analytics minor from IIT Mandi somewhere in the middle, which is roughly when I realised I cared more about why a product was built than how the circuit worked.",
       "Most of what I've built since points the same direction: fraud scoring on UPI transactions, micro-investing for students with no savings habit, credit underwriting for people with no CIBIL history. Financial access in India, for users the existing system doesn't model well.",
       "I did the NextLeap PM Fellowship (Cohort 44) and two PM internships, and I'm looking for an APM or PM role where I can keep doing the analysis myself rather than waiting on someone else's dashboard.",
-      "[TODO — add one specific human detail here. Not a hobby list.]",
+      "Outside of this I read fiction. Currently Assassin's Apprentice, which is the first of the sixteen Robin Hobb books I've been warned about.",
     ],
   },
   writing: {

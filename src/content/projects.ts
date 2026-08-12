@@ -201,7 +201,7 @@ export const projects: Project[] = [
     ],
   },
 
-  // TODO — Remote Resilience Hub (NextLeap / SafetyWing-adjacent companion tool).
+  // Remote Resilience Hub (NextLeap / SafetyWing-adjacent companion tool).
   // Uncomment and flesh out when ready to feature on the home page.
   // {
   //   slug: "remote-resilience-hub",
