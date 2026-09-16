@@ -41,6 +41,7 @@ export function Hero({ content }: HeroProps) {
                   key={link.href}
                   href={link.href}
                   className="text-accent hover:opacity-80"
+                  {...(link.download ? { download: link.download } : {})}
                   {...(link.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}

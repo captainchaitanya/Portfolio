@@ -2,6 +2,7 @@ export type SiteLink = {
   label: string;
   href: string;
   external?: boolean;
+  download?: string;
 };
 
 export type SiteContent = {
@@ -28,7 +29,7 @@ export const site: SiteContent = {
   positioning:
     "Electrical engineer turned PM. I write the SQL myself, then argue about what it means.",
   status:
-    "NIT Agartala '26, business analytics minor from IIT Mandi. Two PM internships. Most of what I've built sits in Indian consumer finance — micro-investing, UPI fraud, and the trust problems underneath both. Looking for full-time APM/PM roles.",
+    "NIT Agartala '26, business analytics minor from IIT Mandi. Two PM internships across B2B SaaS, fintech and health-tech — 20+ discovery interviews, wireframes, UAT, and the SQL underneath. I'm most useful where the requirements are still vague. Looking for full-time APM/PM roles.",
   links: [
     {
       label: "12rajchaitanya@gmail.com",
@@ -43,6 +44,7 @@ export const site: SiteContent = {
       label: "Résumé",
       href: "/resume.pdf",
       external: true,
+      download: "Chaitanya-Raj-Resume.pdf",
     },
     {
       label: "GitHub",
@@ -53,7 +55,7 @@ export const site: SiteContent = {
   about: {
     paragraphs: [
       "I studied electrical engineering at NIT Agartala and picked up a business analytics minor from IIT Mandi somewhere in the middle, which is roughly when I realised I cared more about why a product was built than how the circuit worked.",
-      "Most of what I've built since points the same direction: fraud scoring on UPI transactions, micro-investing for students with no savings habit, credit underwriting for people with no CIBIL history. Financial access in India, for users the existing system doesn't model well.",
+      "What I've built since spans fraud scoring on UPI transactions, a cross-media recommendation engine, and credit underwriting for people with no CIBIL history. Different domains, same shape of problem: modelling users the existing system handles badly.",
       "I did the NextLeap PM Fellowship (Cohort 44) and two PM internships, and I'm looking for an APM or PM role where I can keep doing the analysis myself rather than waiting on someone else's dashboard.",
       "Outside of this I read fiction. Currently Assassin's Apprentice, which is the first of the sixteen Robin Hobb books I've been warned about.",
     ],

@@ -14,7 +14,7 @@ const geistSans = Geist({
 });
 
 const description =
-  "Product manager. Electrical engineering at NIT Agartala, business analytics at IIT Mandi. Fintech, fraud and financial access in India.";
+  "Product manager. Electrical engineering at NIT Agartala, business analytics at IIT Mandi. Turning ambiguous problems into shipped products across SaaS, fintech and health-tech.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chaitanya-raj.vercel.app"),
