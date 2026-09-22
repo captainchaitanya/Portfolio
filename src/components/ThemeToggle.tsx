@@ -36,7 +36,7 @@ export function ThemeToggle() {
         enableThemeTransition();
         setTheme(isDark ? "light" : "dark");
       }}
-      className="relative inline-flex h-10 w-10 items-center justify-center text-text"
+      className="theme-toggle"
     >
       <span aria-hidden="true" className="relative block h-[15px] w-[15px]">
         {mounted ? isDark ? <SunGlyph /> : <MoonGlyph /> : <MoonGlyph />}

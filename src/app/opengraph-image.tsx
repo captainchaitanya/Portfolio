@@ -1,10 +1,41 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import sharp from "sharp";
 
-export const alt = "Chaitanya Raj — Product";
+export const alt =
+  "Vibeshelf homepage with a vibe search field and mixed book, film and game results.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
-export default function OpenGraphImage() {
+async function loadFont(url: string) {
+  const response = await fetch(url);
+  if (!response.ok) return null;
+  return response.arrayBuffer();
+}
+
+export default async function OpenGraphImage() {
+  const screenshotPath = join(process.cwd(), "public/images/vibeshelf-home.webp");
+  const screenshot = await sharp(await readFile(screenshotPath))
+    .resize(560, 390, { fit: "cover", position: "top" })
+    .png()
+    .toBuffer();
+
+  const [serif, sans] = await Promise.all([
+    loadFont("https://cdn.jsdelivr.net/fontsource/fonts/instrument-serif@latest/latin-400-normal.ttf"),
+    loadFont("https://cdn.jsdelivr.net/fontsource/fonts/instrument-sans@latest/latin-400-normal.ttf"),
+  ]);
+
+  const fonts = [
+    serif
+      ? { name: "Instrument Serif", data: serif, weight: 400 as const, style: "normal" as const }
+      : null,
+    sans
+      ? { name: "Instrument Sans", data: sans, weight: 400 as const, style: "normal" as const }
+      : null,
+  ].filter((font) => font !== null);
+
   return new ImageResponse(
     (
       <div
@@ -12,29 +43,60 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          alignItems: "center",
+          justifyContent: "space-between",
           padding: "72px",
           backgroundColor: "#12110F",
-          color: "#EDEBE6",
-          fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
-        <div style={{ fontSize: 28, color: "#8F8B84", marginBottom: 24 }}>Chaitanya Raj</div>
         <div
           style={{
-            fontSize: 48,
-            fontWeight: 500,
-            lineHeight: 1.2,
-            maxWidth: 900,
-            color: "#EDEBE6",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            maxWidth: 460,
           }}
         >
-          Electrical engineer turned PM. I write the SQL myself, then argue about what it means.
+          <div
+            style={{
+              fontSize: 56,
+              lineHeight: 1.1,
+              color: "#F4F1E9",
+              fontFamily: "Instrument Serif, ui-serif, Georgia, serif",
+            }}
+          >
+            Chaitanya Raj
+          </div>
+          <div
+            style={{
+              marginTop: 16,
+              fontSize: 24,
+              lineHeight: 1.35,
+              color: "#AFA79A",
+              fontFamily: "Instrument Sans, ui-sans-serif, system-ui, sans-serif",
+            }}
+          >
+            Product manager — APM/PM
+          </div>
         </div>
-        <div style={{ marginTop: 40, fontSize: 22, color: "#E0754D" }}>Product</div>
+        <img
+          src={`data:image/png;base64,${screenshot.toString("base64")}`}
+          width={560}
+          height={390}
+          alt=""
+          style={{
+            width: 560,
+            height: 390,
+            objectFit: "cover",
+            border: "1px solid #2E2A25",
+            borderRadius: 6,
+          }}
+        />
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts,
+    },
   );
 }

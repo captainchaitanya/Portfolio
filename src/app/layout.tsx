@@ -1,15 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
-import { Grain } from "@/components/Grain";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { SkipLink } from "@/components/SkipLink";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -45,20 +52,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAF9F5" },
-    { media: "(prefers-color-scheme: dark)", color: "#12110F" },
-  ],
+  themeColor: "#12110F",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} h-full`} suppressHydrationWarning>
-      <body className={`${geistSans.className} min-h-full bg-bg text-text antialiased`}>
+    <html
+      lang="en"
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} h-full`}
+      suppressHydrationWarning
+    >
+      <body className={`${instrumentSans.className} min-h-full bg-ground text-ink antialiased`}>
         <ThemeProvider>
           <SkipLink />
-          <Grain />
-          <div className="relative z-[2]">{children}</div>
+          <div className="relative">{children}</div>
         </ThemeProvider>
       </body>
     </html>

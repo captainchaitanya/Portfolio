@@ -53,7 +53,7 @@ export default async function ProjectOpenGraphImage({ params }: Props) {
         >
           {outcome.length > 160 ? `${outcome.slice(0, 157)}…` : outcome}
         </div>
-        <div style={{ marginTop: 40, fontSize: 20, color: "#E0754D" }}>Product</div>
+        <div style={{ marginTop: 40, fontSize: 20, color: "#D9B65C" }}>Product</div>
       </div>
     ),
     { ...size },

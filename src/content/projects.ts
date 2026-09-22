@@ -51,8 +51,8 @@ export const projects: Project[] = [
     summary: {
       problem:
         "People don't browse by genre, they browse by feeling — and their taste is split across three apps that don't talk to each other.",
-      role: "Product. Framing, scope, feature design, user research and deployment. My teammate owned the backend.",
-      team: "Two",
+      role: "Ideation, design, user research, deployment",
+      team: "2 — Shreya Sinha owned the backend",
       timeline: "Jun 2026, one weekend",
       outcome:
         "Shipped and live. Vibe search handles messy real input; recommendation quality is capped by the size of the curated library, which is the main thing I would change.",
@@ -61,6 +61,14 @@ export const projects: Project[] = [
       {
         label: "Live demo",
         href: "https://vibe-shelf.netlify.app/",
+      },
+      {
+        label: "Walkthrough",
+        href: "https://www.youtube.com/watch?v=SkdTvkQf1ZI",
+      },
+      {
+        label: "GitHub repo",
+        href: "https://github.com/captainchaitanya/our-vibeshelf",
       },
       {
         label: "Devpost",

@@ -29,7 +29,7 @@ export const site: SiteContent = {
   positioning:
     "Electrical engineer turned PM. I write the SQL myself, then argue about what it means.",
   status:
-    "NIT Agartala '26, business analytics minor from IIT Mandi. Two PM internships across B2B SaaS, fintech and health-tech — 20+ discovery interviews, wireframes, UAT, and the SQL underneath. I'm most useful where the requirements are still vague. Looking for full-time APM/PM roles.",
+    "I'm most useful before a problem has a spec: when the ask is vague, the feedback contradicts itself, and someone still has to decide what's worth building. That call is the part I enjoy.",
   links: [
     {
       label: "12rajchaitanya@gmail.com",

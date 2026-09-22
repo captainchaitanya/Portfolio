@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Container } from "@/components/Container";
-import { Reveal } from "@/components/Reveal";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import { SummaryBox } from "@/components/SummaryBox";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteImage } from "@/components/SiteImage";
+import { VibeshelfCaseStudy } from "@/components/VibeshelfCaseStudy";
+import { images } from "@/content/media";
 import {
   getNextProject,
   getProject,
@@ -47,102 +46,108 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
   const nextProject = getNextProject(slug);
 
+  if (slug === "vibeshelf") {
+    return <VibeshelfCaseStudy project={project} nextProject={nextProject} />;
+  }
+
+  const heroImage = slug === "upi-fraud-analytics" ? images.upiDashboard : null;
+  const index = projects.findIndex((item) => item.slug === slug);
+
   return (
     <div className="min-h-full">
-      <ScrollProgress />
-      <Container>
-        <header className="flex items-center justify-between gap-4 pt-6 md:pt-10">
-          <nav aria-label="Breadcrumb">
-            <Link
-              href="/"
-              className="text-base leading-body text-accent hover:opacity-80"
-            >
-              ← Back
-              <span className="sr-only"> to {site.name} home</span>
-            </Link>
-          </nav>
-          <ThemeToggle />
-        </header>
+      <header className="frame case-header">
+        <nav aria-label="Breadcrumb">
+          <Link href="/" className="back-link">
+            ← Back
+            <span className="sr-only"> to {site.name} home</span>
+          </Link>
+        </nav>
+        <p className="case-kicker">Case study {String(index + 1).padStart(2, "0")}</p>
+      </header>
 
-        <main id="main">
-          <article className="pt-10 pb-18 md:pt-18">
-            <Reveal as="h1" className="text-display font-medium leading-display">
-              {project.title}
-            </Reveal>
+      <main id="main">
+        <article className="frame">
+          <div className="case-title-block">
+            <p className="eyebrow">{project.year}</p>
+            <h1>{project.title}</h1>
+            <p className="standfirst">{project.outcome}</p>
+          </div>
 
-            {project.links && project.links.length > 0 ? (
-              <Reveal className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-base">
-                {project.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="case-study-link hover:opacity-80"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.label}
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                ))}
-              </Reveal>
-            ) : null}
+          <dl className="meta-strip">
+            <div>
+              <dt>My role</dt>
+              <dd>{project.summary.role}</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>{project.summary.team}</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>{project.summary.timeline}</dd>
+            </div>
+            <div>
+              <dt>Scope</dt>
+              <dd>{project.meta.scope ?? project.summary.outcome}</dd>
+            </div>
+          </dl>
 
-            <Reveal className="mt-10">
-              <SummaryBox
-                problem={project.summary.problem}
-                role={project.summary.role}
-                team={project.summary.team}
-                timeline={project.summary.timeline}
-                outcome={project.summary.outcome}
-              />
-            </Reveal>
-
-            <div className="mt-18 flex flex-col gap-10">
-              {project.sections.map((section) => (
-                <Reveal
-                  as="section"
-                  key={section.heading}
-                  className="border-t border-border pt-10"
+          {project.links && project.links.length > 0 ? (
+            <div className="link-pills">
+              {project.links.map((link, i) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={i === 0 ? "pill-accent" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <h2 className="text-lg font-medium leading-body">{section.heading}</h2>
-                  <div className="mt-4 flex flex-col gap-4">
-                    {section.paragraphs.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className={`text-base leading-body ${
-                          paragraph.startsWith("[TODO") ? "text-muted" : "text-text"
-                        }`}
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </Reveal>
+                  {link.label} ↗
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
               ))}
             </div>
+          ) : null}
 
-            {nextProject ? (
-              <Reveal className="mt-18 border-t border-border pt-10">
-                <nav aria-label="Next project">
-                  <p className="text-sm leading-body text-muted">Next project</p>
-                  <Link
-                    href={`/work/${nextProject.slug}`}
-                    className="group mt-2 inline-flex max-w-full items-baseline gap-2 text-lg font-medium leading-body"
-                  >
-                    <span className="min-w-0">{nextProject.title}</span>
-                    <span
-                      aria-hidden="true"
-                      className="inline-block shrink-0 transition-transform duration-200 motion-reduce:transition-none group-hover:translate-x-[4px]"
-                    >
-                      →
-                    </span>
-                  </Link>
-                </nav>
-              </Reveal>
-            ) : null}
-          </article>
-        </main>
-      </Container>
+          {heroImage ? (
+            <div className="case-hero">
+              <SiteImage image={heroImage} />
+            </div>
+          ) : null}
+
+          <div className="generic-sections">
+            {project.sections.map((section, sectionIndex) => (
+              <section key={section.heading} aria-labelledby={`section-${sectionIndex}`}>
+                <div className="case-heading">
+                  <span className="case-num" aria-hidden="true">
+                    {String(sectionIndex + 1).padStart(2, "0")}
+                  </span>
+                  <h2 id={`section-${sectionIndex}`}>{section.heading}</h2>
+                </div>
+                <div className="body-copy">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+
+          {nextProject ? (
+            <nav className="next-project" aria-label="Next project">
+              <p className="section-label">Next project</p>
+              <Link href={`/work/${nextProject.slug}`}>
+                {nextProject.title}
+                <span className="arrow" aria-hidden="true">
+                  →
+                </span>
+              </Link>
+            </nav>
+          ) : null}
+
+          <SiteFooter />
+        </article>
+      </main>
     </div>
   );
 }
