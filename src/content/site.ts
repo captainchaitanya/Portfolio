@@ -27,9 +27,9 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Chaitanya Raj",
   positioning:
-    "Electrical engineer turned PM. I write the SQL myself, then argue about what it means.",
+    "Product manager. I write the SQL myself, then argue about what it means.",
   status:
-    "I'm most useful before a problem has a spec: when the ask is vague, the feedback contradicts itself, and someone still has to decide what's worth building. That call is the part I enjoy.",
+    "I have done two PM internships at early-stage startups, across health-tech, fintech and B2B SaaS. Both were the same job underneath: turn a vague ask into something a team can actually build.",
   links: [
     {
       label: "12rajchaitanya@gmail.com",

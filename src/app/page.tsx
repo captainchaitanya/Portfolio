@@ -21,7 +21,7 @@ export default function Home() {
         <section className="frame hero" aria-labelledby="hero-heading">
           <p className="eyebrow">Open to full-time APM / PM roles</p>
           <h1 id="hero-heading">
-            Electrical engineer turned PM. I write the SQL myself, then{" "}
+            Product manager. I write the SQL myself, then{" "}
             <em>argue about what it means.</em>
           </h1>
           <p className="hero-intro">{site.status}</p>

@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const description =
-  "Product manager. Electrical engineering at NIT Agartala, business analytics at IIT Mandi. Turning ambiguous problems into shipped products across SaaS, fintech and health-tech.";
+  "Product manager. Two internships across health-tech, fintech and B2B SaaS. Turning vague asks into something a team can actually build.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chaitanya-raj.vercel.app"),
