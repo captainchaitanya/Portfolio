@@ -1,8 +1,12 @@
+export type SiteLinkIcon = "envelope" | "document" | "external" | "linkedin" | "github";
+
 export type SiteLink = {
   label: string;
   href: string;
   external?: boolean;
   download?: string;
+  icon: SiteLinkIcon;
+  accent?: boolean;
 };
 
 export type SiteContent = {
@@ -10,6 +14,7 @@ export type SiteContent = {
   positioning: string;
   status: string;
   links: SiteLink[];
+  footerLinks: SiteLink[];
   about: {
     paragraphs: string[];
   };
@@ -32,24 +37,48 @@ export const site: SiteContent = {
     "I have done two PM internships at early-stage startups, across health-tech, fintech and B2B SaaS. Both were the same job underneath: turn a vague ask into something a team can actually build.",
   links: [
     {
-      label: "12rajchaitanya@gmail.com",
+      label: "Email",
       href: "mailto:12rajchaitanya@gmail.com",
+      icon: "envelope",
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/chaitanya-raj-5c51",
       external: true,
+      icon: "linkedin",
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/captainchaitanya",
+      external: true,
+      icon: "github",
     },
     {
       label: "Résumé",
       href: "/resume.pdf",
       external: true,
       download: "Chaitanya-Raj-Resume.pdf",
+      icon: "document",
+      accent: true,
+    },
+  ],
+  footerLinks: [
+    {
+      label: "12rajchaitanya@gmail.com",
+      href: "mailto:12rajchaitanya@gmail.com",
+      icon: "envelope",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/chaitanya-raj-5c51",
+      external: true,
+      icon: "linkedin",
     },
     {
       label: "GitHub",
       href: "https://github.com/captainchaitanya",
       external: true,
+      icon: "github",
     },
   ],
   about: {

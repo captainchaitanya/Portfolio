@@ -5,11 +5,17 @@ type SiteImageProps = {
   image: SiteImageSpec;
   priority?: boolean;
   sizes?: string;
+  mount?: boolean;
 };
 
-export function SiteImage({ image, priority = false, sizes = IMAGE_SIZES }: SiteImageProps) {
+export function SiteImage({
+  image,
+  priority = false,
+  sizes = IMAGE_SIZES,
+  mount = false,
+}: SiteImageProps) {
   return (
-    <div className="image-frame">
+    <div className={mount ? "portrait-mount" : "image-frame"}>
       <Image
         src={image.src}
         alt={image.alt}

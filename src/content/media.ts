@@ -2,7 +2,7 @@ export const BLUR_DATA_URL =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAAD0lEQVR4AWP49u3bf///GRgYADcdBPxnXG6OAAAAAElFTkSuQmCC";
 
 export const IMAGE_SIZES = "(max-width: 768px) 100vw, 1120px";
-export const PORTRAIT_SIZES = "440px";
+export const PORTRAIT_SIZES = "(max-width: 768px) 324px, 420px";
 
 export type SiteImageSpec = {
   src: string;
@@ -17,7 +17,7 @@ export const images = {
   portrait: {
     src: "/images/chaitanya-portrait.webp",
     alt: "Chaitanya Raj standing on an open terrace, trees and a glass railing to one side and a low orange building behind him.",
-    width: 1280,
+    width: 1050,
     height: 920,
     className: "image-portrait",
   },

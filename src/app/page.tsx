@@ -1,4 +1,5 @@
 import { ExperienceList } from "@/components/ExperienceList";
+import { LinkPills } from "@/components/LinkPills";
 import { ProjectBlock } from "@/components/ProjectBlock";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -26,25 +27,11 @@ export default function Home() {
           </h1>
           <p className="hero-intro">{site.status}</p>
           <div className="hero-portrait">
-            <SiteImage image={images.portrait} priority sizes={PORTRAIT_SIZES} />
+            <SiteImage image={images.portrait} priority sizes={PORTRAIT_SIZES} mount />
           </div>
-          <nav className="hero-links" aria-label="Contact">
-            {site.links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                {...(link.download ? { download: link.download } : {})}
-                {...(link.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-              >
-                {link.label}
-                {link.external ? (
-                  <span className="sr-only"> (opens in a new tab)</span>
-                ) : null}
-              </a>
-            ))}
-          </nav>
+          <div className="hero-links">
+            <LinkPills links={site.links} label="Contact" />
+          </div>
         </section>
 
         <section id="work" className="frame work-section" aria-labelledby="work-heading">
