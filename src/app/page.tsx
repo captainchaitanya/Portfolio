@@ -39,7 +39,7 @@ export default function Home() {
             <h2 id="work-heading" className="section-label">
               Selected work
             </h2>
-            <p className="section-count">Two projects</p>
+            <p className="section-count">Three projects</p>
           </div>
           {featuredProjects.map((project, index) => {
             const presentation = homeProjectFor(project);

@@ -1,10 +1,22 @@
 import { WALKTHROUGH_HREF } from "@/content/home";
 
-export function VideoFacade() {
+type VideoFacadeProps = {
+  href?: string;
+  title?: string;
+  description?: string;
+  cta?: string;
+};
+
+export function VideoFacade({
+  href = WALKTHROUGH_HREF,
+  title = "Walkthrough",
+  description = "A short pass through vibe search, the ranked results, and the taste profile — recorded on the live build, not a deck.",
+  cta = "Watch on YouTube ↗",
+}: VideoFacadeProps) {
   return (
     <a
       className="video-facade"
-      href={WALKTHROUGH_HREF}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -14,13 +26,10 @@ export function VideoFacade() {
         </svg>
       </span>
       <span className="video-copy">
-        <h3>Walkthrough</h3>
-        <p>
-          A short pass through vibe search, the ranked results, and the taste
-          profile — recorded on the live build, not a deck.
-        </p>
+        <h3>{title}</h3>
+        <p>{description}</p>
         <span>
-          Watch on YouTube ↗
+          {cta}
           <span className="sr-only"> (opens in a new tab)</span>
         </span>
       </span>

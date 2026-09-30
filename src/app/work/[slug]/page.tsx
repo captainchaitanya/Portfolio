@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SecondTakeCaseStudy } from "@/components/SecondTakeCaseStudy";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteImage } from "@/components/SiteImage";
 import { VibeshelfCaseStudy } from "@/components/VibeshelfCaseStudy";
@@ -48,6 +49,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
   if (slug === "vibeshelf") {
     return <VibeshelfCaseStudy project={project} nextProject={nextProject} />;
+  }
+
+  if (slug === "second-take") {
+    return <SecondTakeCaseStudy project={project} nextProject={nextProject} />;
   }
 
   const heroImage = slug === "upi-fraud-analytics" ? images.upiDashboard : null;

@@ -59,6 +59,13 @@ export const images = {
     height: 980,
     className: "image-upi",
   },
+  secondTakeSummary: {
+    src: "/images/second-take-summary.webp",
+    alt: "Second Take on desktop: a phone showing the end of a scene (Papa ended open, 35 XP, a scorecard of 90 out of 100 and a skill breakdown), with a creator card on the left and a scene summary panel on the right showing a rising mood line, four skill bars and the two triggers the player hit.",
+    width: 1917,
+    height: 862,
+    className: "image-second-take",
+  },
   writingSmartRematch: {
     src: "/images/writing-smart-rematch.webp",
     alt: "A product brief slide headed Smart Rematch: The Invisible Switch, with a goals column and three city data cards for Delhi, Mumbai and Bangalore.",
@@ -87,6 +94,10 @@ export const captions = {
     "One entry field instead of a genre tree — the whole product argument, on the first screen.",
   homeUpi:
     "Both signals are on the page with the rows that triggered them. Six transactions in ten minutes is the velocity threshold — a number in a WHERE clause, which is the whole reason an analyst can retune it without a retrain.",
+  homeSecondTake:
+    "Every partner reacts for a reason. The panel beside the phone shows which of those reasons your replies hit.",
+  secondTakeHero:
+    "The end of a scene. The score matters less than the panel on the right: which of Papa's triggers you hit, and in what order.",
   vibeshelfHero:
     "The home screen. Books, films and games sit at the same level because the thing being matched is the feeling, not the medium.",
   vibeshelf01:
