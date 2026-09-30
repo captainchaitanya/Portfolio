@@ -25,9 +25,38 @@ export type HomeProject = {
 
 export const homeProjects: HomeProject[] = [
   {
+    slug: "second-take",
+    imageKey: "secondTakeSummary",
+    caption:
+      "Every partner reacts for a reason. The panel beside the phone shows which of those reasons your replies hit.",
+    facts: [
+      { term: "Role", value: "Solo — scene writing, conversation design, build" },
+      { term: "When", value: "Oct 2026" },
+      { term: "Built for", value: "People rehearsing hard conversations" },
+      { term: "Stack", value: "React · TypeScript · JSON scenes" },
+    ],
+    links: [
+      {
+        label: "Read the case study",
+        href: "/work/second-take",
+        emphasis: "accent",
+      },
+      {
+        label: "Live demo",
+        href: "https://second-take-speech.vercel.app/",
+        external: true,
+        emphasis: "muted",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/captainchaitanya/second-take",
+        external: true,
+        emphasis: "muted",
+      },
+    ],
+  },
+  {
     slug: "vibeshelf",
-    lead: true,
-    eyebrow: "Lead project",
     imageKey: "vibeshelfHome",
     caption:
       "One entry field instead of a genre tree — the whole product argument, on the first screen.",
@@ -93,37 +122,6 @@ export const homeProjects: HomeProject[] = [
         emphasis: "muted",
       },
       { label: "Dashboard PDF", placeholder: true },
-    ],
-  },
-  {
-    slug: "second-take",
-    imageKey: "secondTakeSummary",
-    caption:
-      "Every partner reacts for a reason. The panel beside the phone shows which of those reasons your replies hit.",
-    facts: [
-      { term: "Role", value: "Solo — scene writing, conversation design, build" },
-      { term: "When", value: "Oct 2026" },
-      { term: "Built for", value: "People rehearsing hard conversations" },
-      { term: "Stack", value: "React · TypeScript · JSON scenes" },
-    ],
-    links: [
-      {
-        label: "Read the case study",
-        href: "/work/second-take",
-        emphasis: "accent",
-      },
-      {
-        label: "Live demo",
-        href: "https://second-take-speech.vercel.app/",
-        external: true,
-        emphasis: "muted",
-      },
-      {
-        label: "GitHub",
-        href: "https://github.com/captainchaitanya/second-take",
-        external: true,
-        emphasis: "muted",
-      },
     ],
   },
 ];

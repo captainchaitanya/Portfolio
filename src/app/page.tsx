@@ -44,12 +44,17 @@ export default function Home() {
           {featuredProjects.map((project, index) => {
             const presentation = homeProjectFor(project);
             if (!presentation) return null;
+            const lead = index === 0;
             return (
               <ProjectBlock
                 key={project.slug}
                 project={project}
-                presentation={presentation}
-                priority={index === 0}
+                presentation={{
+                  ...presentation,
+                  lead,
+                  eyebrow: lead ? "Lead project" : undefined,
+                }}
+                priority={lead}
               />
             );
           })}

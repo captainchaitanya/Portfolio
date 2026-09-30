@@ -7,6 +7,7 @@ import { SiteImage } from "@/components/SiteImage";
 import { VibeshelfCaseStudy } from "@/components/VibeshelfCaseStudy";
 import { images } from "@/content/media";
 import {
+  caseStudyKicker,
   getNextProject,
   getProject,
   projects,
@@ -46,17 +47,21 @@ export default async function CaseStudyPage({ params }: PageProps) {
   if (!project) notFound();
 
   const nextProject = getNextProject(slug);
+  const kicker = caseStudyKicker(slug);
 
   if (slug === "vibeshelf") {
-    return <VibeshelfCaseStudy project={project} nextProject={nextProject} />;
+    return (
+      <VibeshelfCaseStudy project={project} nextProject={nextProject} kicker={kicker} />
+    );
   }
 
   if (slug === "second-take") {
-    return <SecondTakeCaseStudy project={project} nextProject={nextProject} />;
+    return (
+      <SecondTakeCaseStudy project={project} nextProject={nextProject} kicker={kicker} />
+    );
   }
 
   const heroImage = slug === "upi-fraud-analytics" ? images.upiDashboard : null;
-  const index = projects.findIndex((item) => item.slug === slug);
 
   return (
     <div className="min-h-full">
@@ -67,7 +72,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             <span className="sr-only"> to {site.name} home</span>
           </Link>
         </nav>
-        <p className="case-kicker">Case study {String(index + 1).padStart(2, "0")}</p>
+        <p className="case-kicker">{kicker}</p>
       </header>
 
       <main id="main">

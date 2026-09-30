@@ -36,6 +36,78 @@ export function formatProjectMeta(meta: Project["meta"]): string {
 
 export const projects: Project[] = [
   {
+    slug: "second-take",
+    title: "Second Take",
+    year: "2026",
+    featured: true,
+    outcome:
+      "A practice room for the conversations people replay in their heads. Three written scenes where each partner has a hidden want and clear triggers, and every reply gets honest, line-by-line feedback.",
+    meta: {
+      role: "Solo — scene writing, conversation design, build",
+      team: "Solo",
+      timeline: "Oct 2026, a few days",
+      scope: "React · TypeScript · Framer Motion · scenes as JSON",
+    },
+    summary: {
+      problem:
+        "Most people don't lack advice about hard conversations. They lack practice.",
+      role: "Conversation design, scene writing, build",
+      team: "Solo",
+      timeline: "Oct 2026, a few days",
+      outcome:
+        "Live, not yet tested with users. Three written conversation scenes where every partner reacts for a reason; the biggest limit is that multiple choice can't hear what you'd actually say.",
+    },
+    links: [
+      {
+        label: "Live demo",
+        href: "https://second-take-speech.vercel.app/",
+      },
+      {
+        label: "GitHub repo",
+        href: "https://github.com/captainchaitanya/second-take",
+      },
+    ],
+    sections: [
+      {
+        heading: "Context",
+        paragraphs: [
+          "You rewrite the conversation after it is over. Second Take is a night-time practice room for those conversations: pick a scene, choose a line each turn, watch the other person shift, and get a scorecard at the end.",
+          "It is a concept project, built alone. Not affiliated with any company.",
+        ],
+      },
+      {
+        heading: "How I found the real problem",
+        paragraphs: [
+          "The failure is not that people do not know the right words. They freeze on the first sentence. An authored scene with three choices per turn is more useful than a chatbot that agrees with you.",
+        ],
+      },
+      {
+        heading: "What I did",
+        paragraphs: [
+          "Each turn offers a strong line, a subtle one, and a backfire. Mood picks the partner line you hear next. The debrief names the skills that held, the triggers you hit, and the line to rehearse.",
+        ],
+      },
+      {
+        heading: "The tradeoff I made",
+        paragraphs: [
+          "I cut a live language-model partner and speaking out loud so the scorecard could stay honest. Coverage is capped by handwritten JSON scenes.",
+        ],
+      },
+      {
+        heading: "Outcome",
+        paragraphs: [
+          "Shipped and live as a concept. There are no usage numbers. I am the only person who has used it in anger.",
+        ],
+      },
+      {
+        heading: "What I'd do differently",
+        paragraphs: [
+          "Write more scenes before adding accounts. Test the tag of 'practice' against people other than me. Put the microphone back only if the debrief still works when the input is messy speech.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "vibeshelf",
     title: "Vibeshelf",
     year: "2026",
@@ -207,78 +279,6 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "second-take",
-    title: "Second Take",
-    year: "2026",
-    featured: true,
-    outcome:
-      "A practice room for the conversations people replay in their heads. Three written scenes where each partner has a hidden want and clear triggers, and every reply gets honest, line-by-line feedback.",
-    meta: {
-      role: "Solo — scene writing, conversation design, build",
-      team: "Solo",
-      timeline: "Oct 2026, a few days",
-      scope: "React · TypeScript · Framer Motion · scenes as JSON",
-    },
-    summary: {
-      problem:
-        "Most people don't lack advice about hard conversations. They lack practice.",
-      role: "Conversation design, scene writing, build",
-      team: "Solo",
-      timeline: "Oct 2026, a few days",
-      outcome:
-        "Live, not yet tested with users. Three written conversation scenes where every partner reacts for a reason; the biggest limit is that multiple choice can't hear what you'd actually say.",
-    },
-    links: [
-      {
-        label: "Live demo",
-        href: "https://second-take-speech.vercel.app/",
-      },
-      {
-        label: "GitHub repo",
-        href: "https://github.com/captainchaitanya/second-take",
-      },
-    ],
-    sections: [
-      {
-        heading: "Context",
-        paragraphs: [
-          "You rewrite the conversation after it is over. Second Take is a night-time practice room for those conversations: pick a scene, choose a line each turn, watch the other person shift, and get a scorecard at the end.",
-          "It is a concept project, built alone. Not affiliated with any company.",
-        ],
-      },
-      {
-        heading: "How I found the real problem",
-        paragraphs: [
-          "The failure is not that people do not know the right words. They freeze on the first sentence. An authored scene with three choices per turn is more useful than a chatbot that agrees with you.",
-        ],
-      },
-      {
-        heading: "What I did",
-        paragraphs: [
-          "Each turn offers a strong line, a subtle one, and a backfire. Mood picks the partner line you hear next. The debrief names the skills that held, the triggers you hit, and the line to rehearse.",
-        ],
-      },
-      {
-        heading: "The tradeoff I made",
-        paragraphs: [
-          "I cut a live language-model partner and speaking out loud so the scorecard could stay honest. Coverage is capped by handwritten JSON scenes.",
-        ],
-      },
-      {
-        heading: "Outcome",
-        paragraphs: [
-          "Shipped and live as a concept. There are no usage numbers. I am the only person who has used it in anger.",
-        ],
-      },
-      {
-        heading: "What I'd do differently",
-        paragraphs: [
-          "Write more scenes before adding accounts. Test the tag of 'practice' against people other than me. Put the microphone back only if the debrief still works when the input is messy speech.",
-        ],
-      },
-    ],
-  },
   // Remote Resilience Hub (NextLeap / SafetyWing-adjacent companion tool).
   // Uncomment and flesh out when ready to feature on the home page.
   // {
@@ -302,9 +302,19 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }
 
+function workList(): Project[] {
+  return featuredProjects.length > 0 ? featuredProjects : projects;
+}
+
 export function getNextProject(slug: string): Project | undefined {
-  const list = featuredProjects.length > 0 ? featuredProjects : projects;
+  const list = workList();
   const index = list.findIndex((project) => project.slug === slug);
   if (index === -1) return undefined;
   return list[(index + 1) % list.length];
+}
+
+export function caseStudyKicker(slug: string): string {
+  const index = workList().findIndex((project) => project.slug === slug);
+  if (index === -1) return "Case study";
+  return `Case study ${String(index + 1).padStart(2, "0")}`;
 }

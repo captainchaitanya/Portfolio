@@ -9,6 +9,7 @@ import { site } from "@/content/site";
 type VibeshelfCaseStudyProps = {
   project: Project;
   nextProject?: Project;
+  kicker: string;
 };
 
 const pills = [
@@ -18,7 +19,7 @@ const pills = [
   { label: "Devpost submission", href: "https://devpost.com/software/vibeshelf" },
 ];
 
-export function VibeshelfCaseStudy({ project, nextProject }: VibeshelfCaseStudyProps) {
+export function VibeshelfCaseStudy({ project, nextProject, kicker }: VibeshelfCaseStudyProps) {
   return (
     <div className="min-h-full">
       <header className="frame case-header">
@@ -28,7 +29,7 @@ export function VibeshelfCaseStudy({ project, nextProject }: VibeshelfCaseStudyP
             <span className="sr-only"> to {site.name} home</span>
           </Link>
         </nav>
-        <p className="case-kicker">Case study 01</p>
+        <p className="case-kicker">{kicker}</p>
       </header>
 
       <main id="main">

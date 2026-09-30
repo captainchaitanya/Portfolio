@@ -9,6 +9,7 @@ import { site } from "@/content/site";
 type SecondTakeCaseStudyProps = {
   project: Project;
   nextProject?: Project;
+  kicker: string;
 };
 
 const pills = [
@@ -16,7 +17,7 @@ const pills = [
   { label: "GitHub repo", href: "https://github.com/captainchaitanya/second-take" },
 ];
 
-export function SecondTakeCaseStudy({ project, nextProject }: SecondTakeCaseStudyProps) {
+export function SecondTakeCaseStudy({ project, nextProject, kicker }: SecondTakeCaseStudyProps) {
   return (
     <div className="min-h-full">
       <header className="frame case-header">
@@ -26,7 +27,7 @@ export function SecondTakeCaseStudy({ project, nextProject }: SecondTakeCaseStud
             <span className="sr-only"> to {site.name} home</span>
           </Link>
         </nav>
-        <p className="case-kicker">Case study 03</p>
+        <p className="case-kicker">{kicker}</p>
       </header>
 
       <main id="main">
