@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FounderDeskCaseStudy } from "@/components/FounderDeskCaseStudy";
 import { SecondTakeCaseStudy } from "@/components/SecondTakeCaseStudy";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteImage } from "@/components/SiteImage";
@@ -52,6 +53,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
   if (slug === "vibeshelf") {
     return (
       <VibeshelfCaseStudy project={project} nextProject={nextProject} kicker={kicker} />
+    );
+  }
+
+  if (slug === "founder-desk") {
+    return (
+      <FounderDeskCaseStudy project={project} nextProject={nextProject} kicker={kicker} />
     );
   }
 

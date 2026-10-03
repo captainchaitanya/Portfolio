@@ -36,6 +36,78 @@ export function formatProjectMeta(meta: Project["meta"]): string {
 
 export const projects: Project[] = [
   {
+    slug: "founder-desk",
+    title: "Founder Desk",
+    year: "2026",
+    featured: true,
+    outcome:
+      "A compliance desk for founders running a US company from India. A personalised deadline calendar, a Delaware franchise tax checker, and an AI inbox that reads notices and turns them into dated, reviewable deadlines.",
+    meta: {
+      role: "Solo — research, product, build",
+      team: "Solo",
+      timeline: "Oct 2026, a few days",
+      scope: "Next.js · TypeScript · Tailwind · Gemini · Vitest · Vercel",
+    },
+    summary: {
+      problem:
+        "An Indian founder with a Delaware C-corp and an Indian subsidiary answers to at least five authorities, and most keep track of it in a spreadsheet, a CA's WhatsApp messages, and memory.",
+      role: "Research, product design, build",
+      team: "Solo",
+      timeline: "Oct 2026, a few days",
+      outcome:
+        "Live, not yet tested with users. A compliance desk for India–US founders: a deadline calendar with source-checked rules, a Delaware franchise tax checker, and an AI inbox with human review.",
+    },
+    links: [
+      {
+        label: "Live demo",
+        href: "https://founder-desk-nu.vercel.app/",
+      },
+      {
+        label: "GitHub repo",
+        href: "https://github.com/captainchaitanya/founder-desk",
+      },
+    ],
+    sections: [
+      {
+        heading: "Context",
+        paragraphs: [
+          "A compliance desk for founders who run a Delaware company from India, usually with an Indian subsidiary underneath it. It answers one question: what do Delaware, the IRS and India expect from me next, and how sure can I be about that date?",
+          "It is a concept project, built alone. Not affiliated with any company.",
+        ],
+      },
+      {
+        heading: "How I found the real problem",
+        paragraphs: [
+          "In compliance, trust beats coverage. A calendar with 17 rules that tells you exactly how sure it is about each date is more useful than one with 200 rules that presents guesses as facts.",
+        ],
+      },
+      {
+        heading: "What I did",
+        paragraphs: [
+          "Three tools share one company profile: a deadline calendar, a franchise tax checker, and an inbox that reads compliance notices. Every rule carries its source, a status and the date I last checked it, and the AI never writes anything without a person confirming it first.",
+        ],
+      },
+      {
+        heading: "The tradeoff I made",
+        paragraphs: [
+          "I cut accounts, PDF upload and more countries so the dates themselves could be honest. An unverified calendar is worse than a short one.",
+        ],
+      },
+      {
+        heading: "Outcome",
+        paragraphs: [
+          "Shipped and live as a concept. There are no usage numbers. I am the only person who has used it.",
+        ],
+      },
+      {
+        heading: "What I'd do differently",
+        paragraphs: [
+          "Sit with five founders and their real notices. Finish verifying the India rules. Add PDF upload and reminders only after the dates can be trusted.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "second-take",
     title: "Second Take",
     year: "2026",

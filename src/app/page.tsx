@@ -11,6 +11,25 @@ import { featuredProjects } from "@/content/projects";
 import { site } from "@/content/site";
 import { writing } from "@/content/writing";
 
+const COUNT_WORDS = [
+  "Zero",
+  "One",
+  "Two",
+  "Three",
+  "Four",
+  "Five",
+  "Six",
+  "Seven",
+  "Eight",
+  "Nine",
+  "Ten",
+];
+
+function featuredCountLabel(count: number): string {
+  const word = COUNT_WORDS[count] ?? String(count);
+  return `${word} ${count === 1 ? "project" : "projects"}`;
+}
+
 export default function Home() {
   const aboutLeft = site.about.paragraphs.slice(0, 2);
   const aboutRight = site.about.paragraphs.slice(2);
@@ -39,7 +58,7 @@ export default function Home() {
             <h2 id="work-heading" className="section-label">
               Selected work
             </h2>
-            <p className="section-count">Three projects</p>
+            <p className="section-count">{featuredCountLabel(featuredProjects.length)}</p>
           </div>
           {featuredProjects.map((project, index) => {
             const presentation = homeProjectFor(project);

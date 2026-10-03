@@ -511,6 +511,21 @@ img {
   aspect-ratio: 1917 / 862;
 }
 
+.image-founder-desk-dashboard {
+  aspect-ratio: 1901 / 871;
+  object-position: top;
+}
+
+.image-founder-desk-calendar {
+  aspect-ratio: 1901 / 866;
+  object-position: top;
+}
+
+.image-founder-desk-settings {
+  aspect-ratio: 1902 / 865;
+  object-position: top;
+}
+
 .image-portrait {
   width: 100%;
   height: 100%;
@@ -1240,7 +1255,10 @@ img {
   .image-vibeshelf-results,
   .image-vibeshelf-taste,
   .image-upi,
-  .image-second-take {
+  .image-second-take,
+  .image-founder-desk-dashboard,
+  .image-founder-desk-calendar,
+  .image-founder-desk-settings {
     width: 100%;
     height: auto;
     aspect-ratio: auto;

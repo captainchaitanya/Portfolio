@@ -20,10 +20,41 @@ export type HomeProject = {
   caption: string;
   facts: { term: string; value: string }[];
   links: HomeLink[];
-  imageKey: "vibeshelfHome" | "upiDashboard" | "secondTakeSummary";
+  imageKey: "vibeshelfHome" | "upiDashboard" | "secondTakeSummary" | "founderDeskDashboard";
 };
 
 export const homeProjects: HomeProject[] = [
+  {
+    slug: "founder-desk",
+    imageKey: "founderDeskDashboard",
+    caption:
+      "One desk for what Delaware, the IRS and India expect next. Every date carries a badge saying how far to trust it.",
+    facts: [
+      { term: "Role", value: "Solo — research, product, build" },
+      { term: "When", value: "Oct 2026" },
+      { term: "Built for", value: "India–US founders" },
+      { term: "Stack", value: "Next.js · TypeScript · Gemini · Vercel" },
+    ],
+    links: [
+      {
+        label: "Read the case study",
+        href: "/work/founder-desk",
+        emphasis: "accent",
+      },
+      {
+        label: "Live demo",
+        href: "https://founder-desk-nu.vercel.app/",
+        external: true,
+        emphasis: "muted",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/captainchaitanya/founder-desk",
+        external: true,
+        emphasis: "muted",
+      },
+    ],
+  },
   {
     slug: "second-take",
     imageKey: "secondTakeSummary",

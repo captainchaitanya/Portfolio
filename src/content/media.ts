@@ -66,6 +66,30 @@ export const images = {
     height: 862,
     className: "image-second-take",
   },
+  founderDeskDashboard: {
+    src: "/images/founder-desk-dashboard.webp",
+    alt: "Founder Desk dashboard greeting Chaitanya, with four stats (next deadline Oct 26, 2026, nothing overdue, 0 of 2 done this quarter, estimated annual cost), a Next deadlines list with Unverified, Reviewed and Verified badges, and an Action items card reading You're clear.",
+    width: 1901,
+    height: 871,
+    className: "image-founder-desk-dashboard",
+    objectPosition: "top",
+  },
+  founderDeskCalendar: {
+    src: "/images/founder-desk-calendar.webp",
+    alt: "Founder Desk calendar in list view, grouped by month, with search and jurisdiction filters (All, US-Delaware, US-Federal, India). An AOC-4 deadline on Oct 26, 2026 is tagged This month, From your document and Unverified; the ODI annual performance report on Dec 31, 2026 is tagged Reviewed.",
+    width: 1901,
+    height: 866,
+    className: "image-founder-desk-calendar",
+    objectPosition: "top",
+  },
+  founderDeskSettings: {
+    src: "/images/founder-desk-settings.webp",
+    alt: "Founder Desk settings page showing the saved company profile (first name, company, US entity, tax year end, foreign ownership, Indian subsidiary, Indian-resident founders, US contractors) with an Edit profile button and Appearance options.",
+    width: 1902,
+    height: 865,
+    className: "image-founder-desk-settings",
+    objectPosition: "top",
+  },
   writingSmartRematch: {
     src: "/images/writing-smart-rematch.webp",
     alt: "A product brief slide headed Smart Rematch: The Invisible Switch, with a goals column and three city data cards for Delhi, Mumbai and Bangalore.",
@@ -96,6 +120,14 @@ export const captions = {
     "Both signals are on the page with the rows that triggered them. Six transactions in ten minutes is the velocity threshold — a number in a WHERE clause, which is the whole reason an analyst can retune it without a retrain.",
   homeSecondTake:
     "Every partner reacts for a reason. The panel beside the phone shows which of those reasons your replies hit.",
+  homeFounderDesk:
+    "One desk for what Delaware, the IRS and India expect next. Every date carries a badge saying how far to trust it.",
+  founderDeskHero:
+    "The dashboard. The badges matter more than the dates: Verified means I checked the official source, Reviewed means reliable professional sources agree, Unverified means plan for it but check first.",
+  founderDesk01:
+    "Grouped by month, filtered by jurisdiction, exportable to Google Calendar. The AOC-4 item came from a pasted notice, not from a built-in rule.",
+  founderDesk03:
+    "Everything stays on the device. No account and no server-side database, because a compliance tool that asks for your company details on day one should earn that first.",
   secondTakeHero:
     "The end of a scene. The score matters less than the panel on the right: which of Papa's triggers you hit, and in what order.",
   vibeshelfHero:
