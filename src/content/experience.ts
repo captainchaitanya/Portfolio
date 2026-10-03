@@ -22,7 +22,7 @@ export const experience: Role[] = [
     dates: "Jan–Feb 2026",
     url: "https://www.linkedin.com/company/pulsepeek/",
     lines: [
-      "Ran 20+ discovery interviews and turned ambiguous health-data requirements into a prioritised PRD and logic flows. High-fidelity prototypes landed two weeks ahead of schedule; the founding team reviewed the designs directly.",
+      "Ran 20 discovery interviews and turned ambiguous health-data requirements into a prioritised PRD and logic flows. High-fidelity prototypes landed two weeks ahead of schedule; the founding team reviewed the designs directly.",
     ],
   },
   {

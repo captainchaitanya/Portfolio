@@ -434,13 +434,8 @@ img {
   font-feature-settings: "tnum" 1;
 }
 
-.stats-number,
-.stats-suffix {
+.stats-number {
   display: inline-block;
-}
-
-.stats-suffix {
-  margin-left: 0.02em;
 }
 
 .stats-label {
@@ -471,21 +466,9 @@ img {
     transform 420ms ease-out;
 }
 
-.stats-strip.is-armed .stats-suffix,
-.stats-strip.is-playing .stats-suffix:not(.is-in) {
-  opacity: 0;
-}
-
-.stats-strip.is-playing .stats-suffix.is-in {
-  opacity: 1;
-  transition: opacity 220ms ease-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .stats-strip.is-armed .stats-item,
-  .stats-strip.is-playing .stats-item,
-  .stats-strip.is-armed .stats-suffix,
-  .stats-strip.is-playing .stats-suffix {
+  .stats-strip.is-playing .stats-item {
     opacity: 1;
     transform: none;
     transition: none;
