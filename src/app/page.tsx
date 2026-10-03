@@ -4,6 +4,7 @@ import { ProjectBlock } from "@/components/ProjectBlock";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteImage } from "@/components/SiteImage";
+import { StatsStrip } from "@/components/StatsStrip";
 import { experience } from "@/content/experience";
 import { homeProjectFor } from "@/content/home";
 import { images, PORTRAIT_SIZES } from "@/content/media";
@@ -52,6 +53,8 @@ export default function Home() {
             <LinkPills links={site.links} label="Contact" />
           </div>
         </section>
+
+        <StatsStrip />
 
         <section id="work" className="frame work-section" aria-labelledby="work-heading">
           <div className="section-label-row">

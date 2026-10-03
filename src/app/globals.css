@@ -175,6 +175,7 @@ html.theme-transition *::after {
 
 .frame,
 .hero,
+.stats-strip,
 .pill-row,
 .site-footer,
 .grid-12,
@@ -355,7 +356,7 @@ img {
   justify-content: space-between;
   align-items: start;
   padding-top: 112px;
-  padding-bottom: 96px;
+  padding-bottom: 48px;
 }
 
 .hero .eyebrow {
@@ -398,6 +399,97 @@ img {
   grid-row: 1 / span 4;
   width: 100%;
   max-width: 440px;
+}
+
+.stats-strip {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats-item {
+  min-width: 0;
+}
+
+.stats-value {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: clamp(36px, 3.4vw + 1rem, 48px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.stats-number,
+.stats-suffix {
+  display: inline-block;
+}
+
+.stats-suffix {
+  margin-left: 0.02em;
+}
+
+.stats-label {
+  margin: 10px 0 0;
+  max-width: 16em;
+  color: var(--ink-3);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.stats-domains {
+  margin: 28px 0 0;
+  color: var(--ink-4);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stats-strip.is-armed .stats-item {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.stats-strip.is-playing .stats-item {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 420ms ease-out,
+    transform 420ms ease-out;
+}
+
+.stats-strip.is-armed .stats-suffix,
+.stats-strip.is-playing .stats-suffix:not(.is-in) {
+  opacity: 0;
+}
+
+.stats-strip.is-playing .stats-suffix.is-in {
+  opacity: 1;
+  transition: opacity 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-strip.is-armed .stats-item,
+  .stats-strip.is-playing .stats-item,
+  .stats-strip.is-armed .stats-suffix,
+  .stats-strip.is-playing .stats-suffix {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .portrait-mount {
@@ -1160,7 +1252,7 @@ img {
     grid-template-columns: 1fr;
     gap: 28px;
     padding-top: 72px;
-    padding-bottom: 64px;
+    padding-bottom: 36px;
   }
 
   .hero .eyebrow,
@@ -1190,6 +1282,25 @@ img {
 
   .hero-intro {
     font-size: 16px;
+  }
+
+  .stats-strip {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 28px;
+  }
+
+  .stats-value {
+    font-size: 36px;
+  }
+
+  .stats-domains {
+    margin-top: 24px;
   }
 
   .grid-12 {
