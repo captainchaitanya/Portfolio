@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const description =
-  "Product manager. Two internships across health-tech, fintech and B2B SaaS. Turning vague asks into something a team can actually build.";
+  "Product intern at Noise on the wearables app. Previously PM internships in health-tech, fintech and B2B SaaS. Vague asks into things teams can build.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chaitanya-raj.vercel.app"),

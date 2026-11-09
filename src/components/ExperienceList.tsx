@@ -5,6 +5,7 @@ type ExperienceListProps = {
 };
 
 function monogram(company: string): string {
+  if (company === "Noise") return "N";
   if (company === "WhatBytes") return "WB";
   if (company === "Pulsepeek") return "PP";
   if (company.startsWith("MUNSOC")) return "MN";

@@ -34,7 +34,7 @@ export const site: SiteContent = {
   positioning:
     "Product manager. I write the SQL myself, then argue about what it means.",
   status:
-    "I have done two PM internships at early-stage startups, across health-tech, fintech and B2B SaaS. Both were the same job underneath: turn a vague ask into something a team can actually build.",
+    "Currently a product intern at Noise, working on the wearables app. Before that, two PM internships at early-stage startups across health-tech, fintech and B2B SaaS — all the same job underneath: turn a vague ask into something a team can actually build.",
   links: [
     {
       label: "Email",
@@ -85,7 +85,7 @@ export const site: SiteContent = {
     paragraphs: [
       "I studied electrical engineering at NIT Agartala and picked up a business analytics minor from IIT Mandi somewhere in the middle, which is roughly when I realised I cared more about why a product was built than how the circuit worked.",
       "What I've built since spans fraud scoring on UPI transactions, a cross-media recommendation engine, and credit underwriting for people with no CIBIL history. Different domains, same shape of problem: modelling users the existing system handles badly.",
-      "I did the NextLeap PM Fellowship (Cohort 44) and two PM internships, and I'm looking for an APM or PM role where I can keep doing the analysis myself rather than waiting on someone else's dashboard.",
+      "I'm currently a product intern at Noise. I did the NextLeap PM Fellowship (Cohort 44) and two PM internships before that, and I'm looking for an APM or PM role where I can keep doing the analysis myself rather than waiting on someone else's dashboard.",
       "Outside of this I read fiction. Currently Assassin's Apprentice, which is the first of the sixteen Robin Hobb books I've been warned about.",
     ],
   },

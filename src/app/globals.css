@@ -361,6 +361,11 @@ img {
 
 .hero .eyebrow {
   grid-column: 1;
+  max-width: 620px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .hero h1 {
@@ -1245,6 +1250,11 @@ img {
   .hero-portrait {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
   }
 
   .hero-portrait,

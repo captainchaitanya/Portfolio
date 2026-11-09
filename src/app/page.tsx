@@ -40,7 +40,7 @@ export default function Home() {
       <SiteHeader />
       <main id="main">
         <section className="frame hero" aria-labelledby="hero-heading">
-          <p className="eyebrow">Open to full-time APM / PM roles</p>
+          <p className="eyebrow">Product intern at Noise · Open to full-time APM / PM roles</p>
           <h1 id="hero-heading">
             Product manager. I write the SQL myself, then{" "}
             <em>argue about what it means.</em>

@@ -8,6 +8,15 @@ export type Role = {
 
 export const experience: Role[] = [
   {
+    company: "Noise",
+    title: "Product Intern — Wearables, Product Management & Experience",
+    dates: "Nov 2026 – Present",
+    url: "https://www.linkedin.com/company/gonoise-com",
+    lines: [
+      "Traced a drop-off in the checkout flow to a forced re-login inside the in-app webview, and specced an auto-login hand-off with engineering to remove that step for every buyer. Now building 6–8 behavioural cohorts from six months of purchase and usage data across millions of active users, to target home-page and push nudges per cohort.",
+    ],
+  },
+  {
     company: "WhatBytes",
     title: "Product Management Intern",
     dates: "Mar–May 2026",
